@@ -1,0 +1,7 @@
+FROM python:3.9-buster
+RUN pip install Flask==0.11.1 pymongo==4.0.1
+RUN mkdir /code
+COPY ./backend/. /code
+COPY common /code/common
+
+CMD ["python3", "/code/service.py"]
